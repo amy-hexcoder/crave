@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #D92525;
+  --gold: #C8A100;
+  --ink: #1A1A1A;
+  --paper: #FDFCF9;
+}
+
+html, body {
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(217,37,37,0.06), transparent 60%),
+    radial-gradient(900px 600px at 90% 30%, rgba(200,161,0,0.05), transparent 60%),
+    #0A0A0C;
+  color: #fff;
+}
+
+.card {
+  @apply bg-white text-[var(--ink)] rounded-2xl border border-black/5 shadow-sm;
+}
+.pill {
+  @apply text-xs font-semibold rounded-full px-2 py-1 bg-black/5 text-black/70;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-semibold transition;
+}
+.btn-primary {
+  @apply bg-[var(--primary)] text-white hover:bg-red-700;
+}
+.btn-ghost {
+  @apply bg-black/5 text-black hover:bg-black/10;
+}
+.h1 {
+  @apply font-serif text-4xl md:text-5xl;
+}
+.h2 {
+  @apply font-serif text-2xl;
+}
+.subtle {
+  @apply text-sm text-black/60;
+}
