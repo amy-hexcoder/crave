@@ -15,7 +15,7 @@
     "react-dom": "^19.2.7",
     "react-leaflet": "^5.0.0",
     "zod": "^4.4.3",
-    "@vercel/kv": "latest"
+    "@prisma/client": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",
