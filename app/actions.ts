@@ -59,7 +59,7 @@ export async function createPlan(formData: FormData) {
     mapsUrl: r.mapsUrl
   }));
 
-  const plan: Plan = {
+   const plan: Plan = {
     id: randomUUID(),
     title,
     origin: PALO_ALTO.center,
@@ -68,6 +68,7 @@ export async function createPlan(formData: FormData) {
     source
   };
 
-  PlanStore.set(plan);
+  // Now we await the KV insertion
+  await PlanStore.set(plan);
   return plan.id;
 }
