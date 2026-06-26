@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL") // Neon usually provides this for migrations
+}
+
+model Plan {
+  id        String       @id @default(uuid())
+  title     String
+  originLat Float?
+  originLng Float?
+  createdAt DateTime     @default(now())
+  source    String?
+  items     Restaurant[]
+}
+
+model Restaurant {
+  id           String  @id @default(uuid())
+  planId       String
+  plan         Plan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+  name         String
+  cuisine      String?
+  price        String?
+  address      String?
+  city         String?
+  lat          Float
+  lng          Float
+  openUntil    String?
+  opentableUrl String?
+  mapsUrl      String?
+  bib          Boolean @default(false)
+}
