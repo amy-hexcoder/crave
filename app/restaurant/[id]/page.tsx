@@ -10,7 +10,7 @@ export default async function RestaurantPage({ params }: Props) {
   // 1. Await the params
   const { id } = await params;
 
-  // 2. For the MVP, we read from the demo plan. 
+  // 2. For the MVP, we read from the demo plan.  
   // In v2, this would be: await db.restaurants.findById(id)
   const demo = await PlanStore.get("demo");
   const all = demo ? demo.items : [];
